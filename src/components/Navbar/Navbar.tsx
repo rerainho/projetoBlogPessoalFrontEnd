@@ -1,8 +1,22 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-/*import icon from "./assets/image/icon.png"*/
+import React, { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../Contexts/AuthContext'
+
 
 export default function Navbar() {
+  let navigate = useNavigate()
+
+  const { usuario, handleLogout } = useContext(AuthContext)
+
+  function logout() {
+      handleLogout()
+      alert('Usuário deslogado com sucesso')
+      navigate('/login')
+  }
+
+  let navbarComponent
+
+  
   return (
     <>
       <div className="w-full bg-[#592B36] text-[#FCBBA3] flex justify-center py-4">

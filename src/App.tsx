@@ -1,19 +1,22 @@
 // Elemento JSX/TSX => Função que retorna HTML
 //import Flex from "./components/Flex/Flex";
-import React, {useState, useEffect} from "react";
-import axios from "axios";
 // import UserProvider from './Contexts/UserContext';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import About from "./pages/About/About";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Contact from "./pages/Contact/Contact";
-import "./App.css";
-import Cadastro from "./pages/Cadastro/Cadastro";
-import { AuthProvider } from './Contexts/AuthContext';
+import React, { useEffect, useState } from 'react';
+import './App.css';
 
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import Cadastro from './pages/Cadastro/Cadastro';
+import Home from './pages/Home/Home';
+import { AuthProvider } from './Contexts/AuthContext';
+import ListaTemas from './components/Temas/ListaTemas/ListaTemas';
+import FormularioTema from './components/Temas/FormularioTema/FormularioTema';
+import axios from 'axios';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import DeletarTema from './components/Temas/DeletarTema/DeletarTema.tsx';
 interface User {
 id: number;
 name: string;
@@ -45,11 +48,10 @@ export default function App() {
            <Route path="/Home" element={<Home />} />
            <Route path="/About" element={<About />} />
            <Route path="/Contact" element={<Contact />} />
-           
-          {/* <Route path="/Temas" element={<ListaTemas />} /> */}
-         {/* <Route path="/CadastroTema" element={<FormularioTema />} />
-          <Route path="/EditarTema" element={<FormularioTema />} />
-          <Route path="/DeletarTema" element={<DeletarTema />} />  */}
+           <Route path="/Temas" element={<ListaTemas />} />
+           <Route path="/CadastrarTema/" element={<FormularioTema />} />
+          <Route path="/EditarTema/:id" element={<FormularioTema />} />
+          <Route path="/DeletarTema/:id" element={<DeletarTema />} />  
         </Routes>
        {/* { <body>
         <h1 style={{ paddingTop: '80px', paddingBottom: '50px', fontSize: '30px', fontWeight: 'bolder'}}>Lista de usuários:</h1>
