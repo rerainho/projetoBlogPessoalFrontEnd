@@ -26,7 +26,7 @@ function DeletarPostagem() {
         alert('O token expirou, favor logar novamente')
         handleLogout()
       }
-    }
+     }//verificação de token
   }
 
   useEffect(() => {
