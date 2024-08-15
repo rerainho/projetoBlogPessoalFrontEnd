@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   InstagramLogo,
@@ -7,10 +7,20 @@ import {
   GithubLogo,
 } from "@phosphor-icons/react";
 import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from 'react'
+import { AuthContext } from '../../Contexts/AuthContext'
 
 export default function Footer() {
-  return (
-    <>
+
+  const { usuario, handleLogout } = useContext(AuthContext)
+
+  let footerComponent
+
+  let data = new Date().getFullYear()
+
+  if(usuario.token !== '') {
+    footerComponent = (
+     <>
       <div className="flex justify-center bg-[#592B36] text-[#FCBBA3]">
         <div className="container flex flex-col items-center py-4">
           <Link
@@ -68,4 +78,10 @@ export default function Footer() {
       </div>
     </>
   );
+}
+return (
+  <>
+      {footerComponent}
+    </>
+  )
 }

@@ -4,6 +4,7 @@ import { UserContext } from '../../Contexts/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
 import ListaPostagens from '../../components/Postagens/ListaPostagens/ListaPostagens';
 import ModalPostagem from '../../components/Postagens/ModalPostagem/ModalPostagem';
+import HomeLogo from './HomeLogo.png'
 
 
 
@@ -25,7 +26,7 @@ export default function Home() {
             </div>
   
             <div className="flex justify-center ">
-            <img src="https://i.imgur.com/azdJUuT.jpeg" alt="Paisagem Tela inicial" className='w-2/3' />
+            <img className='w-2/3' src={HomeLogo} alt="Mulher se comunicando"  />
       
             </div>
           </div>

@@ -50,6 +50,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthContext';
 import UsuarioLogin from '../../Models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
+import LoginLogo from './LoginLogo.png'
 
 function Login() {
   let navigate = useNavigate();
@@ -121,7 +122,6 @@ function login(e: ChangeEvent<HTMLFormElement>) {
           </button>
 
           <hr className="border-slate-800 w-full" />
-
           <p>
             Ainda não tem uma conta?{' '}
             <Link to="/cadastro" className="text-indigo-800 hover:underline">

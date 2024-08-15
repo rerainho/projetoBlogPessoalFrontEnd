@@ -20,6 +20,10 @@ import DeletarTema from './components/Temas/DeletarTema/DeletarTema.tsx';
 import ListaPostagens from './components/Postagens/ListaPostagens/ListaPostagens.tsx';
 import FormularioPostagem from './components/Postagens/FormularioPostagem/FormularioPostagem.tsx';
 import DeletarPostagem from './components/Postagens/DeletarPostagem/DeletarPostagem.tsx';
+import Perfil from './pages/Perfil/Perfil.tsx';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 
 interface User {
@@ -43,6 +47,7 @@ export default function App() {
   return (
     <>
     <AuthProvider>
+    <ToastContainer />
      <BrowserRouter>
       <Navbar />
       <div className="min-h-[80vh] bg-[#592B36] text-[#FCBBA3]">  
@@ -61,6 +66,7 @@ export default function App() {
           <Route path="/CadastroPostagem" element={<FormularioPostagem />} />
           <Route path="/EditarPostagem/:id" element={<FormularioPostagem />} />
           <Route path="/DeletarPostagem/:id" element={<DeletarPostagem />} />
+          <Route path="/Perfil" element={<Perfil />} />
         </Routes>
        {/* { <body>
         <h1 style={{ paddingTop: '80px', paddingBottom: '50px', fontSize: '30px', fontWeight: 'bolder'}}>Lista de usuários:</h1>

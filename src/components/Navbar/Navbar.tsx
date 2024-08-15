@@ -16,8 +16,8 @@ export default function Navbar() {
 
   let navbarComponent
 
-  
-  return (
+  if(usuario.token !== "") {
+    navbarComponent = ( 
     <>
       <div className="w-full bg-[#592B36] text-[#FCBBA3] flex justify-center py-4">
         <div className="container flex justify-between text-lg">
@@ -86,4 +86,10 @@ export default function Navbar() {
       </div>
     </>
   );
+}
+return (
+  <>
+      {navbarComponent}
+    </>
+  )
 }
