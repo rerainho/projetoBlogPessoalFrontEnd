@@ -75,8 +75,8 @@ export default function Navbar() {
             >
               Perfil
             </Link>
-            <Link
-              to="/sair"
+            <Link 
+              to="/sair"  onClick={logout}
               className="hover:text-[#FEFCDD] transition-colors duration-300"
             >
               Sair

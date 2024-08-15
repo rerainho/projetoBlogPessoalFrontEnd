@@ -17,6 +17,11 @@ import axios from 'axios';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import DeletarTema from './components/Temas/DeletarTema/DeletarTema.tsx';
+import ListaPostagens from './components/Postagens/ListaPostagens/ListaPostagens.tsx';
+import FormularioPostagem from './components/Postagens/FormularioPostagem/FormularioPostagem.tsx';
+import DeletarPostagem from './components/Postagens/DeletarPostagem/DeletarPostagem.tsx';
+
+
 interface User {
 id: number;
 name: string;
@@ -51,7 +56,11 @@ export default function App() {
            <Route path="/Temas" element={<ListaTemas />} />
            <Route path="/CadastrarTema/" element={<FormularioTema />} />
           <Route path="/EditarTema/:id" element={<FormularioTema />} />
-          <Route path="/DeletarTema/:id" element={<DeletarTema />} />  
+          <Route path="/DeletarTema/:id" element={<DeletarTema />} /> 
+          <Route path="/Postagens" element={<ListaPostagens />} /> 
+          <Route path="/CadastroPostagem" element={<FormularioPostagem />} />
+          <Route path="/EditarPostagem/:id" element={<FormularioPostagem />} />
+          <Route path="/DeletarPostagem/:id" element={<DeletarPostagem />} />
         </Routes>
        {/* { <body>
         <h1 style={{ paddingTop: '80px', paddingBottom: '50px', fontSize: '30px', fontWeight: 'bolder'}}>Lista de usuários:</h1>
