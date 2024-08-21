@@ -6,17 +6,16 @@ import {
   At,
   GithubLogo,
 } from "@phosphor-icons/react";
-import { Link, useNavigate } from "react-router-dom";
-import React, { useContext } from 'react'
+import { Link } from "react-router-dom";
+import { useContext } from 'react'
 import { AuthContext } from '../../Contexts/AuthContext'
 
 export default function Footer() {
 
-  const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario } = useContext(AuthContext)
 
   let footerComponent
 
-  let data = new Date().getFullYear()
 
   if(usuario.token !== '') {
     footerComponent = (

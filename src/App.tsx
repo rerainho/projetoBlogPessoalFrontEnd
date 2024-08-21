@@ -1,7 +1,7 @@
 // Elemento JSX/TSX => Função que retorna HTML
 //import Flex from "./components/Flex/Flex";
 // import UserProvider from './Contexts/UserContext';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
@@ -33,7 +33,7 @@ name: string;
 }
 
 export default function App() {
-  const [users, setUsers] = useState<User[]>([]);
+  const [, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     axios.get<User[]>('https://jsonplaceholder.typicode.com/users')
